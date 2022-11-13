@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text {
+  color: #f7f7f7;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 0;
+  @media only screen and (max-width: 1000px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 750px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 16px;
+  }
+}
+
+.section {
+  padding: 0;
+}
+
+.subHeadSmall {
+  color: #c92620;
+  font-size: 26px;
+  font-weight: 700;
+}
