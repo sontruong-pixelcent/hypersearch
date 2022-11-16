@@ -38,7 +38,7 @@ const Hero = memo((props: Props) => {
                 Advanced Program In Computer Science
               </Text>
               <div className={classes.buttonContainer}>
-                <Button className={classes.button} href="tel:0123456789">
+                <Button className={classes.button} href="/">
                   SAY HELLO
                 </Button>
               </div>

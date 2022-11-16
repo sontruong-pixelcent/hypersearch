@@ -6,30 +6,13 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: process.env.GATSBY_SITE_URL,
-    title: "Smart CCTV",
-    author: `Surge`,
-    description: "Smart CCTV and Alarms in KeriKeri",
+    siteUrl: "https://hypersearch.gtsb.io",
+    title: "Hypersearch",
+    author: `Son Truong`,
+    description: "Hypersearch",
     image: "/logo.png",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        url: process.env.WPGRAPHQL_URL,
-        schema: {
-          timeout: 200000,
-        },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-gravity-forms",
-      options: {
-        // This URL should be the same as you use for your
-        // gatsby-source-wordpress options.
-        url: process.env.WPGRAPHQL_URL,
-      },
-    },
     {
       resolve: "gatsby-background-image",
       options: {
@@ -45,8 +28,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Smart CCTV",
-        short_name: "SmartCCTV",
+        name: "Hypersearch",
+        short_name: "Hypersearch",
         start_url: "/",
         // These can be imported once ESM support lands
         background_color: "#ffffff",

@@ -26,7 +26,7 @@ const Header = memo((props: HeaderProps) => {
   // })
 
   const cta = {
-    href: "/contact",
+    href: "/",
     text: "Contact",
   }
 
