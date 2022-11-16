@@ -1,90 +1,53 @@
-import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React, { memo } from "react"
-import {
-  ButtonList,
-  Container,
-  Heading,
-  HomepageImage,
-  HomepageLink,
-  Section,
-} from "../ui"
+import { StaticImage } from "gatsby-plugin-image"
 import * as classes from "./styles.module.scss"
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@material-ui/core/styles"
+import { Container, Text, Button } from "../ui"
 
-export interface HeroProps {
-  image?: HomepageImage
-  kicker?: string
-  h1: string
-  subhead: string
-  text: string
-  links: HomepageLink[]
-}
+let darkTheme = createTheme({
+  palette: {
+    type: "dark",
+  },
+})
+darkTheme = responsiveFontSizes(darkTheme)
 
-const Hero = memo((props: HeroProps) => {
+interface Props {}
+
+const Hero = memo((props: Props) => {
   return (
-    <Section className={classes.section}>
-      <Container width="narrow">
-        <div className={classes.content}>
-          <Heading className={classes.heading} as="h1">
-            {props.h1}
-          </Heading>
-          {/* <Subhead as="h2">
-            {props.subhead}
-          </Subhead> */}
-          <Heading className={classes.text} as="h1">
-            {props.text?.replace("&amp;", "&")}
-          </Heading>
-          {props.image && (
-            <GatsbyImage
-              className={classes.image}
-              alt={props.image.alt}
-              image={getImage(props.image.gatsbyImageData)}
-            />
-          )}
-          <ButtonList className={classes.buttonList} links={props.links} />
-        </div>
-        {/* <Flex gap={4} variant="responsive">
-          <Box width="half">
-            {props.image && (
-              <GatsbyImage
-                alt={props.image.alt}
-                image={getImage(props.image.gatsbyImageData)}
-              />
-            )}
-          </Box>
-          <Box width="half">
-            <Heading as="h1">
-              {props.kicker && <Kicker>{props.kicker?.replace("&amp;", "&")}</Kicker>}
-              {props.h1}
-            </Heading>
-            <Subhead as="h2">{props.subhead}</Subhead>
-            <Text as="p">{props.text?.replace("&amp;", "&")}</Text>
-            <ButtonList links={props.links} />
-          </Box>
-        </Flex> */}
-      </Container>
-    </Section>
+    <ThemeProvider theme={darkTheme}>
+      <div className={classes.section} id="about">
+        <StaticImage
+          className={classes.heroImage}
+          src="../../../static/hero.jpg"
+          alt="Hero Image"
+          style={{ position: "absolute" }}
+        />
+        <div className={classes.overlay}></div>
+
+        <Container className={classes.container} width="normal">
+          <div className={classes.contentWrapper}>
+            <div className={classes.content}>
+              <Text className={classes.typo1}>NLP</Text>
+              <Text className={classes.typo2}>Natural Language Processing</Text>
+              <Text className={classes.typo3}>
+                Advanced Program In Computer Science
+              </Text>
+              <div className={classes.buttonContainer}>
+                <Button className={classes.button} href="tel:0123456789">
+                  SAY HELLO
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </ThemeProvider>
   )
 })
 
 export default Hero
-
-export const query = graphql`
-  fragment HomepageHeroContent on HomepageHero {
-    id
-    kicker
-    h1: heading
-    subhead
-    text
-    links {
-      id
-      href
-      text
-    }
-    image {
-      id
-      gatsbyImageData
-      alt
-    }
-  }
-`

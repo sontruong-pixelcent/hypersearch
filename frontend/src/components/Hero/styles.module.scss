@@ -1,37 +1,59 @@
 .section {
-  padding-top: 50px;
-  padding-bottom: 0;
+  height: calc(100vh - 24px);
+  position: relative;
+  top: 0;
 }
 
-.content {
+.container {
+  height: 100%;
+  top: 0;
+  margin-top: -90px;
+}
+
+.contentWrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  z-index: 100;
+  position: relative;
+  padding-top: 82px;
+  justify-content: space-between;
   align-items: center;
 }
 
-.image {
-  width: fit-content;
-}
-
-.buttonList {
-  gap: 20px 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  a {
-    color: #f7f7f7;
-    background-color: #c92620;
-    border-radius: 5px;
-    padding: 12px 28px;
-    font-size: 18px;
-    font-weight: 400;
+.content {
+  width: 65%;
+  @media only screen and (max-width: 1000px) {
+    width: 75%;
+  }
+  @media only screen and (max-width: 750px) {
+    width: 90%;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
   }
 }
 
-.heading {
-  text-align: center;
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: calc(100vh - 24px);
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.heroImage {
+  height: calc(100vh - 24px);
+  width: 100%;
+  z-index: 1;
+}
+
+.typo1 {
   font-size: 36px;
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-bottom: 0;
   line-height: normal;
   letter-spacing: normal;
   @media only screen and (max-width: 1000px) {
@@ -45,20 +67,54 @@
   }
 }
 
-.text {
-  text-align: center;
-  font-size: 30px;
+.typo2 {
+  color: #c92620;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: normal;
+  text-shadow: 3px 0px 8px #ffffff;
+  @media only screen and (max-width: 1000px) {
+    font-size: 56px;
+  }
+  @media only screen and (max-width: 750px) {
+    font-size: 52px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 48px;
+  }
+}
+
+.typo3 {
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 0;
   line-height: normal;
   letter-spacing: normal;
   @media only screen and (max-width: 1000px) {
-    font-size: 26px;
+    font-size: 24px;
   }
   @media only screen and (max-width: 750px) {
     font-size: 22px;
   }
   @media only screen and (max-width: 500px) {
-    font-size: 18px;
+    font-size: 20px;
   }
+}
+
+.buttonContainer {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.button {
+  color: #f7f7f7;
+  background-color: #c92620;
+  border-radius: 5px;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 400;
 }

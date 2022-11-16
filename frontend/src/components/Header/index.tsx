@@ -1,15 +1,5 @@
 import React, { Fragment, memo, useEffect, useState } from "react"
-import { Menu, X } from "react-feather"
-import {
-  Container,
-  Flex,
-  FlexList,
-  Space,
-  NavLink,
-  Button,
-  InteractiveIcon,
-  Nudge,
-} from "../ui"
+import { Container, Flex, FlexList, NavLink, Button } from "../ui"
 import {
   mobileNavOverlay,
   mobileNavLink,
@@ -20,23 +10,11 @@ import {
 import BrandLogo from "../BrandLogo"
 import clsx from "clsx"
 import * as classes from "./styles.module.scss"
-import { graphql, useStaticQuery } from "gatsby"
 import PhoneIcon from "@mui/icons-material/Phone"
 
 interface HeaderProps {}
 
 const Header = memo((props: HeaderProps) => {
-  const data = useStaticQuery(graphql`
-    query allPage {
-      allPage {
-        nodes {
-          slug
-          title
-        }
-      }
-    }
-  `)
-
   const navItems = []
   // const navItems = data?.allPage?.nodes?.map((item, index) => {
   //   return {
