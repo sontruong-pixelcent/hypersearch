@@ -1,3 +1,29 @@
-.text {
-  color: aqua;
+.about-section {
+  
 }
+
+.heading {
+  color: red;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 25px;
+}
+
+.slogan {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.aboutText {
+  font-size: 15px;
+  margin-top: 25px;
+  text-align: justify;
+  line-height: 1.4;
+}
+
