@@ -2,6 +2,9 @@
 
 ## Setup
 
+### Python version
+Python version is specified in the `.python-version` file
+
 ### For mac:
 - Python setup:
     1. `cd backend` and create virtual env by running `python3 -m venv env`
