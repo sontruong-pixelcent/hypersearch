@@ -4,7 +4,7 @@
 
 ### For mac:
 - Python setup:
-    1. Create virtual env by running `python3 -m venv env`
+    1. `cd backend` and create virtual env by running `python3 -m venv env`
     2. Activate virtual env `source env/bin/activate`
     3. Install dependencies `pip3 install -r requirements.txt`
 
