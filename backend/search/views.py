@@ -1,7 +1,7 @@
 from django.core import serializers
 from django.http import JsonResponse
 from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank
-from .models import Package
+from package.models import Package
 
 
 def index(request):

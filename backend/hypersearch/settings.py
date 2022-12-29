@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'search.apps.SearchConfig',
+    'package.apps.PackageConfig',
     'django.contrib.postgres',
     'django.contrib.admin',
     'django.contrib.auth',
