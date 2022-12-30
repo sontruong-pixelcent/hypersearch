@@ -1,7 +1,11 @@
-.about-section {
-  
+// reset css
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+// about us
 .heading {
   color: red;
   text-align: center;
@@ -16,14 +20,34 @@
   text-align: center;
   margin-top: 25px;
   font-size: 15px;
-  font-style: italic;
   opacity: 0.6;
 }
 
 .aboutText {
   font-size: 15px;
+  color: #20C20E;
   margin-top: 25px;
   text-align: justify;
   line-height: 1.4;
 }
 
+.memberList {
+  margin-top: 48px;
+  overflow: hidden;
+}
+
+.memberItem {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+.memberName {
+  font-size: 15px;
+}
+
+.memberImage {
+  margin-top: 15px;
+  width: 154px;
+  border-radius: 4px;
+}

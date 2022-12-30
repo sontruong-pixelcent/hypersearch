@@ -1,0 +1,118 @@
+// reset css
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+.rmt8 {
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: 8px;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+  
+.row::after, .rmt8::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+  
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+  
+.colFull {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+}
+  
+.colHalf {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100%/2);
+}
+
+// section template
+.content {
+    padding: 64px 0;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    color: red;
+    text-align: center;
+    font-size: 30px;    
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.subheading {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+// contact
+.contactBody {
+    margin-top: 47px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.contactBody::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contactInfo {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100%/2);
+    color: #20C20E;
+}
+
+.contactInfo i {
+    width: 30px;
+    display: inline-block;
+}
+
+.contactForm {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100%/2);
+}
+
+.contactForm .formControl {
+    padding: 8px;
+    font-size: 15px; 
+    border: 1px solid #ccc;
+    width: 100%;
+}
+  
+.contactForm .submitBtn {
+    color: #000;
+    background-color: #ccc;;
+    padding: 9px 15px;
+    float: right;
+    margin-top: 16px;
+    cursor: pointer;
+}
