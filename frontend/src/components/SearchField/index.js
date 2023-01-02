@@ -21,7 +21,8 @@ const SearchField = () => {
     if (searchValue) {
       axios
         .get(
-          `http://django-env.eba-y2pfmr6x.us-west-2.elasticbeanstalk.com/v1/search?q=${searchValue}`
+          `http://localhost:9000/v1/search?q=${searchValue}`
+          // `http://django-env.eba-y2pfmr6x.us-west-2.elasticbeanstalk.com/v1/search?q=${searchValue}`
         )
         .then((res) => {
           setData(JSON.parse(res?.data?.packages));
