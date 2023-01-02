@@ -20,23 +20,23 @@ export const ArticleTitleWrapper = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   h1 {
-    width: 1240px;
     font-weight: 600;
     font-size: 54px;
     line-height: 100%;
     color: var(--turquoise);
     margin: 0px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   @media (max-width: 767px) {
     padding: 36px 20px;
     gap: 35px;
     width: 100%;
-    height: 180px;
     margin-top: 130px;
 
     & h1 {
-      width: 335px;
-      height: 108px;
       font-weight: 600;
       font-size: 54px;
       line-height: 100%;
@@ -44,8 +44,6 @@ export const ArticleTitleWrapper = styled.div`
   }
   @media (max-width: 1439px) {
     & h1 {
-      /* width: 335px; */
-      height: 108px;
       font-weight: 600;
       font-size: 54px;
       line-height: 100%;
@@ -55,7 +53,6 @@ export const ArticleTitleWrapper = styled.div`
 
 export const EventBody = styled.div`
   width: 100%;
-  /* height: 625px; */
   padding: 50px 205px;
   background-color: var(--black);
   display: flex;

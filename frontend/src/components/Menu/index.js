@@ -17,17 +17,6 @@ const Menu = ({ onCloseMenu }) => {
           href="/#"
           onClick={(e) => {
             e.preventDefault();
-            navigate(`/`);
-            fireCloseMenu();
-          }}
-          aria-label={"Seach"}
-        >
-          <Search hoverColor={"var(--green)"} />
-        </a>
-        <a
-          href="/#"
-          onClick={(e) => {
-            e.preventDefault();
             fireCloseMenu();
           }}
           aria-label={"Close menu"}
@@ -38,7 +27,7 @@ const Menu = ({ onCloseMenu }) => {
       <div>
         <ul>
           <li>
-            <a href="/">Son Truong</a>
+            <a href="/documentation">Documentation</a>
           </li>
         </ul>
       </div>

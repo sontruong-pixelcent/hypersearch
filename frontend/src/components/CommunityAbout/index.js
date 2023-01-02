@@ -7,11 +7,11 @@ import { CommunityAboutDiv } from "./elements";
 const CommunityAbout = ({ readme, stars, forks, watchers }) => {
   return (
     <CommunityAboutDiv>
-      <div className="description">
+      <div className="description" style={{ width: "90%" }}>
         <ReactMarkdown>{readme}</ReactMarkdown>
       </div>
 
-      <div style={{ width: "100%", maxWidth: "100px" }}>
+      <div style={{ width: "10%", maxWidth: "100px" }}>
         <div>
           <H5SmallStrong>Stars</H5SmallStrong>
           <H5Big>{stars}</H5Big>
