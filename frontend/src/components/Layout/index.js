@@ -4,23 +4,14 @@ import Header from "./../Header";
 import MainWrapper from "./../MainWrapper";
 import Menu from "./../Menu";
 import { MenuWrapper, Wrapper } from "./elements";
-import { Location } from "@reach/router";
 
 const Layout = ({
   children,
-  footerColor,
   backgroundColor,
   headerColor,
-  aboveFooter,
-  fullWidth,
   headerBlack,
   skipHeader,
   isFixed,
-  title,
-  seoTitle,
-  SEODescription,
-  SEOImageURL,
-  SEOIsArticle,
 }) => {
   const [menuShown, setMenuShown] = useState(false);
 

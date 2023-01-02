@@ -27,22 +27,11 @@ const Header = ({
 
   return (
     <HeaderWrapper skipHeader={skipHeader} headerBlack={headerBlack}>
-      <HeaderDiv className="fixed">
+      <HeaderDiv>
         <Link to={"/"}>
           <Logo color="#ffffff" alt="Hypersearch" />
         </Link>
         <ul>
-          <li>
-            <a
-              href="/#"
-              onClick={(e) => {
-                e.preventDefault();
-                openSearch(true);
-              }}
-            >
-              <Search alt="Search" color={menuColor} />
-            </a>
-          </li>
           <li>
             <a
               href="/#"

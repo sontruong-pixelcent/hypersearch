@@ -11,9 +11,6 @@ export const HeaderDiv = styled.header`
   margin-right: auto;
   transition: 0.5s;
   pointer-events: none;
-  @media (max-width: 768px) {
-    align-items: flex-start;
-  }
   & > a > svg {
     transition: 0.5s;
   }

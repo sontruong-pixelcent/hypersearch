@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { SeachFieldWrapper } from "./elements";
-import { H3, H5Big } from "./../Typography";
+import { Info, Item, ResultContainer, SeachFieldWrapper } from "./elements";
+import {
+  H3,
+  H4Strong,
+  H5Big,
+  H5BigStrong,
+  H5SmallMedium,
+} from "./../Typography";
 import Search from "./../icons/Search";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-// import axios from "axios";
+import axios from "axios";
+import { navigate } from "gatsby";
 
 const SearchField = () => {
   const [searchValue, setSearchValue] = useState("");
   const [isPristine, setIsPristine] = useState(true);
-  const [totalResults, setTotalResults] = useState(0);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     if (searchValue) {
-      // axios.get() ...
-      console.log(searchValue);
+      axios
+        .get(
+          `http://django-env.eba-y2pfmr6x.us-west-2.elasticbeanstalk.com/v1/search?q=${searchValue}`
+        )
+        .then((res) => {
+          setData(JSON.parse(res?.data?.packages));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }, [searchValue]);
 
@@ -46,11 +61,48 @@ const SearchField = () => {
       </label>
       {isPristine ? null : (
         <p style={{ color: "var(--white)" }}>
-          {totalResults
-            ? `${totalResults} search results`
+          {data
+            ? `${data.length} search results`
             : "No results. Try changing what you're searching for."}
         </p>
       )}
+      <ResultContainer>
+        {data?.length > 0
+          ? data.map((item) => {
+              console.log(item);
+              return (
+                <Item onClick={() => navigate(`/detail/${item?.pk}`)}>
+                  <H4Strong>{item?.fields?.name}</H4Strong>
+                  <H5BigStrong style={{ marginBottom: "10px" }}>
+                    {item?.fields?.author}
+                  </H5BigStrong>
+                  <H5SmallMedium
+                    style={{
+                      marginBottom: "10px",
+                      display: "-webkit-box",
+                      "-webkit-line-clamp": "3",
+                      "-webkit-box-orient": "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {item?.fields?.description}
+                  </H5SmallMedium>
+                  <Info>
+                    <H5SmallMedium>
+                      Stars: {item?.fields?.stargazers_count}
+                    </H5SmallMedium>
+                    <H5SmallMedium>
+                      Forks: {item?.fields?.forks_count}
+                    </H5SmallMedium>
+                    <H5SmallMedium>
+                      Watchers: {item?.fields?.watchers_count}
+                    </H5SmallMedium>
+                  </Info>
+                </Item>
+              );
+            })
+          : null}
+      </ResultContainer>
     </SeachFieldWrapper>
   );
 };

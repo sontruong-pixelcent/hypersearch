@@ -9,6 +9,7 @@ export const ArticleTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.75) 20.05%,
@@ -20,9 +21,8 @@ export const ArticleTitleWrapper = styled.div`
   background-repeat: no-repeat;
   h1 {
     width: 1240px;
-    height: 110px;
     font-weight: 600;
-    font-size: 110px;
+    font-size: 54px;
     line-height: 100%;
     color: var(--turquoise);
     margin: 0px;

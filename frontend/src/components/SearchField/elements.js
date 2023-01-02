@@ -77,3 +77,33 @@ export const SeachFieldWrapper = styled.div`
     }
   }
 `;
+
+export const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+`;
+
+export const Item = styled.div`
+  background-color: var(--green);
+  color: var(--black);
+  width: 100%;
+  padding: 20px;
+  transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.3s;
+  }
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0 20px;
+  align-items: center;
+  justify-content: flex-end;
+`;

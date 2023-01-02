@@ -1,8 +1,8 @@
 import React from "react";
-import Img from "gatsby-image";
+import { H3Strong } from "../Typography";
 
 const Logo = () => (
-  <Img fixed={{ src: "/logo.png" }} style={{ width: "75px", height: "75px", marginTop: "4px" }} />
+  <H3Strong style={{ color: "#ffffff" }}>HYPERSEARCH</H3Strong>
 );
 
 export default Logo;
