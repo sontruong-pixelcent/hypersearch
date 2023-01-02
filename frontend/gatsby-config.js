@@ -1,42 +1,32 @@
-// support for .env, .env.development, and .env.production
-require("dotenv").config()
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://hypersearch.gtsb.io",
-    title: "Hypersearch",
+    title: `Hypersearch`,
+    description: `Hypersearch`,
     author: `Son Truong`,
-    description: "Hypersearch",
-    image: "/logo.png",
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-background-image",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:",
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-image",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-vanilla-extract",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Hypersearch",
-        short_name: "Hypersearch",
-        start_url: "/",
-        // These can be imported once ESM support lands
-        background_color: "#ffffff",
-        theme_color: "#004ca3",
-        icon: "src/favicon.png",
+        name: `Hypersearch`,
+        short_name: `Hypersearch`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
-    "gatsby-plugin-sass",
+    `gatsby-plugin-gatsby-cloud`,
   ],
-}
+};
