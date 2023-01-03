@@ -23,8 +23,8 @@ const SearchField = () => {
         setIsSearching(true);
         axios
           .get(
-            // `http://django-env.eba-y2pfmr6x.us-west-2.elasticbeanstalk.com/v1/search/?q=${searchValue}`
-            `http://localhost:9000/v1/search?q=${searchValue}`
+            `http://django-env.eba-sjmc3y4f.ap-southeast-1.elasticbeanstalk.com/v1/search/?q=${searchValue}`
+            // `http://localhost:9000/v1/search?q=${searchValue}`
           )
           .then((res) => {
             setData(JSON.parse(res?.data?.packages));

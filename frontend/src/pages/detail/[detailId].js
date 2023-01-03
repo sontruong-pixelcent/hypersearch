@@ -30,8 +30,8 @@ const DetailPage = (props) => {
     if (detailId) {
       axios
         .get(
-          // `http://django-env.eba-y2pfmr6x.us-west-2.elasticbeanstalk.com/package/${detailId}`
-          `http://localhost:9000/package/${detailId}`
+          `http://django-env.eba-sjmc3y4f.ap-southeast-1.elasticbeanstalk.com/package/${detailId}`
+          // `http://localhost:9000/package/${detailId}`
         )
         .then((res) => {
           res?.data?.item

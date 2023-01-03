@@ -16,8 +16,8 @@ export const ArticleTitleWrapper = styled.div`
       rgba(0, 0, 0, 0) 113.33%
     ),
     url(${AboutBackgroundImage});
-  background-size: 100% 100%;
-  background-position: center center;
+  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
   h1 {
     font-weight: 600;
