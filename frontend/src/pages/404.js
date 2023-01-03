@@ -1,8 +1,8 @@
 import React from "react";
-import Img from "gatsby-image";
 import Layout from "./../components/Layout";
 import { PageWrapperDiv } from "./../components/PressStyles/elements";
 import { HeaderImageWrapper } from "../styles/404";
+import { StaticImage } from "gatsby-plugin-image";
 
 const NotFoundPage = () => {
   return (
@@ -13,7 +13,7 @@ const NotFoundPage = () => {
     >
       <PageWrapperDiv>
         <HeaderImageWrapper>
-          <Img fixed={{ src: "/bg19.jpg" }} />
+          <StaticImage src="../../static/bg19.jpg" alt="404" />
           <div>
             <h1>404</h1>
             <div
