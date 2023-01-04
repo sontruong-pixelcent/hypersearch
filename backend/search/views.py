@@ -12,6 +12,6 @@ def index(request):
 
     results = serializers.serialize("json", Package.objects.annotate(
         rank=search_rank
-    ).order_by("-rank")[:5])
+    ).order_by("-rank")[:5], fields=('id', 'index', 'fullname', 'name', 'description', 'author', 'stargazers_count', 'watchers_count', 'forks_count'))
 
     return JsonResponse({'packages': results})

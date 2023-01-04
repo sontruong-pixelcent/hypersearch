@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.postgres.indexes import GinIndex # add the Postgres recommended GIN index 
+from django.contrib.postgres.search import SearchVectorField      
+
 
 
 class Package(models.Model):
@@ -11,3 +14,8 @@ class Package(models.Model):
     stargazers_count = models.IntegerField()
     watchers_count = models.IntegerField()
     forks_count = models.IntegerField()
+    topics = models.CharField(max_length=317, default='[]')
+    vector_column = SearchVectorField(null=True)  # new field
+
+    class Meta:
+        indexes = (GinIndex(fields=["vector_column"]),) # add index
