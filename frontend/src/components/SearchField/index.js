@@ -23,8 +23,7 @@ const SearchField = () => {
         setIsSearching(true);
         axios
           .get(
-            `http://django-env.eba-sjmc3y4f.ap-southeast-1.elasticbeanstalk.com/v1/search/?q=${searchValue}`
-            // `http://localhost:9000/v1/search?q=${searchValue}`
+            `https://django-env.eba-sjmc3y4f.ap-southeast-1.elasticbeanstalk.com/v1/search/?q=${searchValue}`
           )
           .then((res) => {
             setData(JSON.parse(res?.data?.packages));
@@ -85,7 +84,7 @@ const SearchField = () => {
               return (
                 <Item
                   key={item?.pk}
-                  onClick={() => navigate(`/detail/${item?.pk}`)}
+                  onClick={() => navigate(`/detail/${item?.fields?.index}`)}
                 >
                   <H4Strong>{item?.fields?.name}</H4Strong>
                   <H5BigStrong style={{ marginBottom: "10px" }}>
